@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <title>Mob Timer — Focus Timer for macOS</title>
+    <meta name="description"
+      content="A minimal macOS timer designed for deep focus and mob programming. Start instantly, stay focused, get notified.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet">
+    <script>
+      window.va = window.va || function() {
+        (window.vaq = window.vaq || []).push(arguments);
+      };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <img src="/images/logo.png" alt="Mob Timer" width="28" height="28">
+          <span>Mob Timer</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#mob-programming">Mob Programming</a></li>
+          <li><a href="#break-timer">Break Timer</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#why-mob-timer">Why Mob Timer</a></li>
+        </ul>
+        <a href="#download" class="btn btn-sm btn-primary nav-download-btn">Download</a>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+      <!-- Mobile menu panel -->
+      <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu-links">
+          <li><a href="#mob-programming">Mob Programming</a></li>
+          <li><a href="#break-timer">Break Timer</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#why-mob-timer">Why Mob Timer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <a href="#download" class="btn btn-primary btn-lg mobile-menu-download">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Download for Mac
+          </a>
+          <div class="mobile-menu-meta">
+            <span>macOS 13+</span>
+            <span class="meta-dot">·</span>
+            <span>Free</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="badge-dot"></span>Native macOS · Free Download</div>
+
+          <h1 class="hero-title" data-klar-edit>The timer that<br><span class="gradient-text">gets out of your
+              way</span></h1>
+
+          <p class="hero-subtitle">Mob Timer is a minimal macOS timer built for deep focus sessions and collaborative
+            mob programming. Start in seconds. Stay in the zone.</p>
+
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary btn-lg">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              Download for Mac
+            </a>
+            <a href="/assets/Mob Timer.dmg" download="" class="btn btn-ghost btn-lg">
+              See features
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>macOS 13+</span>
+            <span class="meta-dot">·</span>
+            <span>Native SwiftUI</span>
+            <span class="meta-dot">·</span>
+            <span>No subscription</span>
+          </div>
+        </div>
+
+        <!-- App Window Mockup -->
+        <div class="hero-visual">
+          <div class="app-window app-window-mob">
+            <div class="window-chrome">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+            </div>
+            <div class="window-body mob-window-body">
+              <img src="/images/app-screenshot.png" alt="Mob Timer app" class="app-screenshot">
+              <div class="screenshot-time-overlay" id="screenshot-timer">
+                07:28
+              </div>
+            </div>
+          </div>
+          <div class="window-reflection"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF ========== -->
+    <section class="social-proof" id="social-proof">
+      <div class="container">
+        <p class="proof-label">Built for developers who value focus</p>
+        <div class="proof-stats">
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-desc">Timer presets</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-desc">Custom durations</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">0</span>
+            <span class="stat-desc">Subscriptions</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-desc">Native macOS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MOB PROGRAMMING ========== -->
+    <section class="mob-section" id="mob-programming">
+      <div class="mob-bg">
+        <div class="mob-glow mob-glow-1"></div>
+        <div class="mob-glow mob-glow-2"></div>
+      </div>
+      <div class="container">
+        <div class="mob-layout">
+          <div class="mob-copy">
+            <div class="section-tag">Core Feature</div>
+            <h2 class="section-title" style="text-align: left">
+              Mob programming,<br><span class="gradient-text">perfectly in sync</span>
+            </h2>
+            <p class="mob-lead">
+              Mob Timer is built around a single shared countdown that every
+              teammate sees at the same time—no drift, no confusion about whose
+              turn it is.
+            </p>
+
+            <div class="mob-steps" data-klar-list>
+              <div class="mob-step">
+                <div class="mob-step-num">1</div>
+                <div>
+                  <strong>Create a session</strong>
+                  <p>Start a new session in one click. Get a shareable code instantly, or give it a permanent name your
+                    team can always find. hehe</p>
+                </div>
+              </div>
+              <div class="mob-step">
+                <div class="mob-step-num">2</div>
+                <div>
+                  <strong>Share the code</strong>
+                  <p>Every team member opens Mob Timer and joinsss with the code. The timer and queue sync across all
+                    Macs in real time.</p>
+                </div>
+              </div>
+              <div class="mob-step">
+                <div class="mob-step-num">3</div>
+                <div>
+                  <strong>Auto-rotate drivers</strong>
+                  <p>
+                    When a turn ends, everyone gets notified and the next driver
+                    is automatically highlighted. No manual coordination needed.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mob-tags" data-list><span class="mob-tag">Real-time sync</span>
+              <span class="mob-tag">Persistent named sessions</span>
+              <span class="mob-tag">Auto-rotation</span>
+            </div>
+          </div>
+
+          <div class="mob-visual">
+            <div class="mob-flow">
+              <!-- Settings / Join card -->
+              <div class="flow-card flow-card-create">
+                <div class="flow-settings-title">Settings</div>
+                <div class="flow-settings-section">
+                  <div class="flow-settings-label">MOB TIMER SESSION</div>
+                  <div class="flow-settings-desc">
+                    A shared timer for your whole team. Everyone sees the same
+                    countdown and knows whose turn it is to drive.
+                  </div>
+                  <div class="flow-input-field">Session code or name</div>
+                  <button class="flow-join-btn">Join Session</button>
+                  <div class="flow-or-divider">or create</div>
+                  <div class="flow-input-field">Session name (optional)</div>
+                  <button class="flow-create-btn">Create Session</button>
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="flow-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+
+              <!-- Active Mob Timer card -->
+              <div class="flow-card flow-card-active">
+                <div class="flow-app-tabs">
+                  <span class="flow-app-tab active">Mob Timer</span>
+                  <span class="flow-app-tab">Break Timer</span>
+                </div>
+
+                <div class="flow-ring-wrap">
+                  <svg viewBox="0 0 100 100" class="flow-ring-svg">
+                    <circle cx="50" cy="50" r="42" class="ring-track"></circle>
+                    <circle cx="50" cy="50" r="42" class="ring-progress flow-ring-progress" style="--progress: 0.55">
+                    </circle>
+                  </svg>
+                  <div class="flow-ring-inner">
+                    <div class="flow-driver-name">SUZANNE</div>
+                    <span class="flow-time" id="flow-time">05:06</span>
+                    <div class="flow-driving-sub">Now driving</div>
+                  </div>
+                </div>
+
+                <div class="flow-next-label">Next: Gabriel</div>
+
+                <div style="flex: 1"></div>
+
+                <div class="flow-participants-bar">
+                  <span class="flow-p-label">PARTICIPANTS</span>
+                  <span class="flow-session-code">Session: NEWSWEB</span>
+                </div>
+                <div class="flow-chips">
+                  <span class="flow-chip">Siri ×</span>
+                  <span class="flow-chip flow-chip-active">● Suzanne ×</span>
+                  <span class="flow-chip">Gabriel ×</span>
+                  <span class="flow-chip">Richard ×</span>
+                  <span class="flow-chip flow-chip-add">+</span>
+                </div>
+
+                <!-- Notification toast -->
+                <div class="flow-toast" id="flow-toast">
+                  <span class="flow-toast-icon">🔔</span>
+                  <div class="flow-toast-text">
+                    <strong>Turn complete!</strong>
+                    <span>Gabriel is now driving.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sync indicator -->
+            <div class="mob-sync-bar">
+              <div class="sync-dot"></div>
+              <span>Synced across all team members</span>
+              <span class="sync-sep">·</span>
+              <span class="sync-ts">Updated just now</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BREAK TIMER ========== -->
+    <section class="app-showcase" id="break-timer">
+      <div class="container">
+        <div class="app-showcase-inner">
+          <div class="app-showcase-content">
+            <div class="section-tag">Break Timer</div>
+            <h2 class="section-title" style="text-align: left">Work deeply.<br>Rest intentionally.</h2>
+            <p class="app-showcase-desc">
+              Mob Timer's Break Timer keeps your work sessions structured. Pick
+              a cycle preset — Pomodoro, Deep Work, or your own custom rhythm —
+              and let the app handle the rest. A gentle ring tracks your
+              progress so you stay in the zone without watching the clock.
+            </p>
+            <ul class="app-showcase-points">
+              <li>Pomodoro, Deep Work, Quick, and Custom presets</li>
+              <li>Visual ring progress — always glanceable</li>
+              <li>Shared across your whole team in real time</li>
+            </ul>
+          </div>
+          <div class="app-showcase-visual">
+            <img src="/images/app-break-timer.png" alt="Mob Timer Break Timer" class="app-showcase-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Features</div>
+          <h2 class="section-title">Everything you need,<br>nothing you don't</h2>
+          <p class="section-subtitle">
+            Mob Timer strips away the noise so you can focus on what matters.
+            Every feature is intentional.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card feature-card-large">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 3C7.134 3 4 6.134 4 10s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7z" stroke="currentColor"
+                  stroke-width="1.5"></path>
+                <path d="M11 7v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3>Persistent Sessions</h3>
+            <p>
+              Name your session and it's always there. Rejoin tomorrow with the
+              same code, same queue, same team—pick up exactly where you left
+              off.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="3" y="3" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
+                <path d="M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3>Mob Programming</h3>
+            <p>
+              Shared sessions sync across multiple Macs in real time. Every team
+              member stays perfectly in sync—down to the millisecond.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M7 4h8M5 8h12M9 12h4M11 16v0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                </path>
+              </svg>
+            </div>
+            <h3>Distraction-Free</h3>
+            <p>
+              Frameless floating window lives quietly in your corner. A status
+              bar icon shows your remaining time without stealing focus.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M4 11a7 7 0 0 1 7-7M18 11a7 7 0 0 1-7 7" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round"></path>
+                <path d="M15 7l3-3 1 4-4-1M7 15l-3 3-1-4 4 1" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <h3>Turn Rotation</h3>
+            <p>
+              When a turn ends, the next driver is automatically highlighted and
+              everyone gets notified. Fair, effortless, zero manual
+              coordination.
+            </p>
+          </div>
+
+          <div class="feature-card feature-card-accent">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+                <path d="M11 6v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3>Instant Timer Setup</h3>
+            <p>
+              One click to start a Pomodoro, Deep Work, or Quick session. No
+              configuration hell—just focused work from the moment you open the
+              app.
+            </p>
+            <div class="feature-pill">Pomodoro · Deep Work · Quick</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">How it works</div>
+          <h2 class="section-title">Three steps to<br>pure focus</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3>Share a session</h3>
+              <p>
+                Create a session and share the code with your team. Everyone
+                joins instantly — no accounts, no setup required.
+              </p>
+            </div>
+            <div class="step-visual">
+              <div class="step-card step-card-session">
+                <div class="app-settings-label">MOB TIMER SESSION</div>
+                <div class="app-settings-desc">
+                  A shared timer for your whole team. Everyone sees the same
+                  countdown and knows whose turn it is to drive.
+                </div>
+                <div class="app-input-field">Session code or name</div>
+                <button class="app-join-btn">Join Session</button>
+                <div class="app-divider">or create</div>
+                <div class="app-input-field">Session name (optional)</div>
+                <button class="app-create-btn">Create Session</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-connector">
+            <div class="connector-line"></div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3>Focus on your work</h3>
+              <p>
+                Once your session is running, Mob Timer stays out of your way. A
+                countdown in the menu bar keeps everyone on track—no switching
+                windows, no interruptions.
+              </p>
+            </div>
+            <div class="step-visual">
+              <div class="step-card step-card-timer">
+                <div class="step-menubar">
+                  <span class="step-menubar-spacer"></span>
+                  <span class="step-menubar-item" id="step-menubar-time">Gabriel: 07:28</span>
+                </div>
+                <div class="app-ring-container">
+                  <svg viewBox="0 0 100 100" class="app-ring-svg">
+                    <circle cx="50" cy="50" r="42" class="app-ring-track"></circle>
+                    <circle cx="50" cy="50" r="42" class="app-ring-progress" id="step-ring-progress"
+                      style="--progress: 0.5"></circle>
+                  </svg>
+                  <div class="app-ring-inner">
+                    <div class="app-ring-name">GABRIEL</div>
+                    <div class="app-ring-time">03:28</div>
+                    <div class="app-ring-label">Now driving</div>
+                  </div>
+                </div>
+                <div class="app-next-label">Next: Siri</div>
+                <div class="app-participants-row">
+                  <span class="app-participant">Siri</span>
+                  <span class="app-participant active">Gabriel</span>
+                  <span class="app-participant">Bekhal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-connector">
+            <div class="connector-line"></div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3>Set your work and break intervals</h3>
+              <p>
+                Choose how long to focus and how long to rest. Mob Timer handles
+                the countdown and alerts you when it's time to take a break.
+              </p>
+            </div>
+            <div class="step-visual">
+              <div class="step-card step-card-presets">
+                <div class="app-settings-label">CYCLE PRESET</div>
+                <div class="app-preset-grid">
+                  <div class="app-preset-item">
+                    <div class="app-preset-name">Pomodoro</div>
+                    <div class="app-preset-sub">25 / 5</div>
+                  </div>
+                  <div class="app-preset-item">
+                    <div class="app-preset-name">Deep Work</div>
+                    <div class="app-preset-sub">50 / 10</div>
+                  </div>
+                  <div class="app-preset-item active">
+                    <div class="app-preset-name">Quick</div>
+                    <div class="app-preset-sub">15 / 3</div>
+                  </div>
+                  <div class="app-preset-item">
+                    <div class="app-preset-name">Custom</div>
+                    <div class="app-preset-sub">28 / 5</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== APP PREVIEW ========== -->
+    <section class="preview" id="preview" style="display: none">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">App Preview</div>
+          <h2 class="section-title">
+            Built for the way<br>you actually work
+          </h2>
+          <p class="section-subtitle">
+            Every pixel designed to minimize friction and maximize focus.
+          </p>
+        </div>
+
+        <div class="preview-grid">
+          <!-- Mob Timer Preview -->
+          <div class="preview-window preview-window-main">
+            <div class="window-chrome">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+            </div>
+            <div class="window-body preview-body">
+              <div class="app-tabs">
+                <button class="app-tab active">Mob Timer</button>
+                <button class="app-tab">Break Timer</button>
+                <button class="app-tab app-tab-icon">
+                  <svg width="16" height="12" viewBox="0 0 20 14" fill="none">
+                    <ellipse cx="10" cy="10" rx="4" ry="4" fill="#4a9eff" opacity="0.3"></ellipse>
+                    <circle cx="10" cy="10" r="3" fill="#4a9eff"></circle>
+                    <ellipse cx="4" cy="9" rx="3" ry="3" fill="#4a9eff" opacity="0.6"></ellipse>
+                    <ellipse cx="16" cy="9" rx="3" ry="3" fill="#4a9eff" opacity="0.6"></ellipse>
+                  </svg>
+                </button>
+              </div>
+              <div class="pv-ring-wrap">
+                <svg viewBox="0 0 180 180" class="pv-ring-svg">
+                  <circle cx="90" cy="90" r="75" class="pv-ring-track"></circle>
+                  <circle cx="90" cy="90" r="75" class="pv-ring-progress pv-ring-green" style="--progress: 0.78">
+                  </circle>
+                </svg>
+                <div class="pv-ring-inner">
+                  <div class="pv-driver-name">GABRIEL</div>
+                  <div class="pv-time pv-time-green">03:28</div>
+                  <div class="pv-sublabel">Now driving</div>
+                </div>
+              </div>
+              <div class="pv-next">Next: Siri</div>
+              <div class="pv-duration-row">
+                <span class="pv-dur-btn">−</span>
+                <span class="pv-dur-val">15 min</span>
+                <span class="pv-dur-btn">+</span>
+              </div>
+              <div class="pv-controls">
+                <button class="pv-ctrl-btn">↺</button>
+                <button class="pv-ctrl-btn pv-ctrl-main pv-ctrl-green">
+                  ⏸
+                </button>
+                <button class="pv-ctrl-btn">⏭</button>
+              </div>
+              <div class="pv-participants-section">
+                <div class="pv-participants-header">
+                  <span class="pv-participants-label">PARTICIPANTS</span>
+                  <span class="pv-session-tag">Session: NEWSWEB <span class="pv-dot-green">●</span></span>
+                </div>
+                <div class="pv-chips">
+                  <span class="pv-chip">Siri ×</span>
+                  <span class="pv-chip">Bekhal ×</span>
+                  <span class="pv-chip pv-chip-active">● Gabriel ×</span>
+                  <span class="pv-chip pv-chip-add">+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Break Timer Preview -->
+          <div class="preview-window preview-window-side">
+            <div class="window-chrome">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+            </div>
+            <div class="window-body preview-body">
+              <div class="app-tabs">
+                <button class="app-tab">Mob Timer</button>
+                <button class="app-tab active">Break Timer</button>
+                <button class="app-tab app-tab-icon">
+                  <svg width="16" height="12" viewBox="0 0 20 14" fill="none">
+                    <ellipse cx="10" cy="10" rx="4" ry="4" fill="#4a9eff" opacity="0.3"></ellipse>
+                    <circle cx="10" cy="10" r="3" fill="#4a9eff"></circle>
+                    <ellipse cx="4" cy="9" rx="3" ry="3" fill="#4a9eff" opacity="0.6"></ellipse>
+                    <ellipse cx="16" cy="9" rx="3" ry="3" fill="#4a9eff" opacity="0.6"></ellipse>
+                  </svg>
+                </button>
+              </div>
+              <div class="pv-ring-wrap">
+                <svg viewBox="0 0 180 180" class="pv-ring-svg">
+                  <circle cx="90" cy="90" r="75" class="pv-ring-track"></circle>
+                  <circle cx="90" cy="90" r="75" class="pv-ring-progress pv-ring-blue" style="--progress: 0"></circle>
+                </svg>
+                <div class="pv-ring-inner">
+                  <div class="pv-driver-name">WORK</div>
+                  <div class="pv-time pv-time-blue">28:00</div>
+                  <div class="pv-sublabel">Locked in. Keep it up.</div>
+                </div>
+              </div>
+              <div class="pv-duration-row">
+                <span class="pv-dur-btn">−</span>
+                <span class="pv-dur-val">28 min</span>
+                <span class="pv-dur-btn">+</span>
+              </div>
+              <div class="pv-controls">
+                <button class="pv-ctrl-btn">↺</button>
+                <button class="pv-ctrl-btn pv-ctrl-main pv-ctrl-blue">▶</button>
+                <button class="pv-ctrl-btn">⏭</button>
+              </div>
+              <div class="pv-participants-section">
+                <div class="pv-participants-header">
+                  <span class="pv-participants-label">CYCLE PRESET</span>
+                  <span class="pv-session-tag">Session: NEWSWEB <span class="pv-dot-green">●</span></span>
+                </div>
+                <div class="pv-preset-grid">
+                  <div class="pv-preset">
+                    Pomodoro<br><small>25 / 5</small>
+                  </div>
+                  <div class="pv-preset">
+                    Deep Work<br><small>50 / 10</small>
+                  </div>
+                  <div class="pv-preset">Quick<br><small>15 / 3</small></div>
+                  <div class="pv-preset pv-preset-active">
+                    Custom<br><small>28 / 5</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings Preview -->
+          <div class="preview-menubar">
+            <div class="menubar-window pv-settings-panel">
+              <div class="pv-settings-title">Settings</div>
+              <div class="pv-settings-section">
+                <div class="pv-settings-section-title">Mob Timer Session</div>
+                <div class="pv-settings-section-desc">
+                  A shared timer for your whole team. Everyone sees the same
+                  countdown and knows whose turn it is to drive.
+                </div>
+                <div class="pv-connected-row">
+                  <div>
+                    <div class="pv-connected-label">CONNECTED</div>
+                    <div class="pv-connected-name">NEWSWEB</div>
+                  </div>
+                  <div class="pv-connected-actions">
+                    <button class="pv-icon-btn">⎘</button>
+                    <button class="pv-leave-btn">Leave</button>
+                  </div>
+                </div>
+              </div>
+              <div class="pv-settings-section">
+                <div class="pv-settings-section-title">Break Timer Sync</div>
+                <div class="pv-settings-section-desc">
+                  Join a session to sync your break timer with teammates. Break
+                  phases are shared across all participants.
+                </div>
+                <div class="pv-connected-row">
+                  <div>
+                    <div class="pv-connected-label">CONNECTED</div>
+                    <div class="pv-connected-name">NEWSWEB</div>
+                  </div>
+                  <div class="pv-connected-actions">
+                    <button class="pv-icon-btn">⎘</button>
+                    <button class="pv-leave-btn">Leave</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY MOB TIMER ========== -->
+    <section class="why" id="why-mob-timer">
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-content">
+            <div class="section-tag">Why Mob Timer</div>
+            <h2 class="section-title">Timers shouldn't<br>add friction</h2>
+            <p class="why-body">
+              Most timers demand your attention. They fight for screen space,
+              interrupt your flow, and drown you in settings. Mob Timer takes
+              the opposite approach.
+            </p>
+            <p class="why-body">
+              It launches instantly, stays out of the way, and does exactly one
+              job exceptionally well: keeping track of time while you focus on
+              the work that matters.
+            </p>
+            <div class="why-points">
+              <div class="why-point">
+                <div class="why-check">✓</div>
+                <div>
+                  <strong>Native, not Electron</strong>
+                  <p>
+                    Pure SwiftUI. Lightweight, fast, and battery-friendly by
+                    default.
+                  </p>
+                </div>
+              </div>
+              <div class="why-point">
+                <div class="why-check">✓</div>
+                <div>
+                  <strong>No account required</strong>
+                  <p>
+                    Download and run. No sign-ups, no onboarding flows, no
+                    friction.
+                  </p>
+                </div>
+              </div>
+              <div class="why-point">
+                <div class="why-check">✓</div>
+                <div>
+                  <strong>Designed for deep work</strong>
+                  <p>
+                    Every design decision optimizes for minimizing interruptions
+                    and maximizing flow.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-compare">
+            <div class="compare-card">
+              <div class="compare-header compare-bad">
+                <span>Other timers</span>
+              </div>
+              <ul class="compare-list">
+                <li class="compare-item bad">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 2l10 10M12 2L2 12" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  Cluttered interfaces
+                </li>
+                <li class="compare-item bad">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 2l10 10M12 2L2 12" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  Web-based (slow)
+                </li>
+                <li class="compare-item bad">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 2l10 10M12 2L2 12" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  Require subscriptions
+                </li>
+                <li class="compare-item bad">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 2l10 10M12 2L2 12" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  No team sync
+                </li>
+                <li class="compare-item bad">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 2l10 10M12 2L2 12" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  Generic, not macOS-native
+                </li>
+              </ul>
+            </div>
+            <div class="compare-card compare-card-good">
+              <div class="compare-header compare-good">
+                <span>Mob Timer</span>
+                <span class="compare-badge">You're here</span>
+              </div>
+              <ul class="compare-list">
+                <li class="compare-item good">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1.5 7l4 4 7-7" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  Minimal, focused UI
+                </li>
+                <li class="compare-item good">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1.5 7l4 4 7-7" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  Native SwiftUI app
+                </li>
+                <li class="compare-item good">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1.5 7l4 4 7-7" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  Free forever
+                </li>
+                <li class="compare-item good">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1.5 7l4 4 7-7" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  Real-time mob sync
+                </li>
+                <li class="compare-item good">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1.5 7l4 4 7-7" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  Designed for macOS
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DOWNLOAD CTA ========== -->
+    <section class="download-cta" id="download">
+      <div class="cta-bg">
+        <div class="cta-glow"></div>
+      </div>
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-icon">
+            <img src="/images/logo-large.png" alt="Mob Timer" width="72" height="72"
+              style="filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5))">
+          </div>
+          <h2 class="cta-title">Start focusing today.</h2>
+          <p class="cta-subtitle">
+            Free. Native. No sign-up required. Just download and run.
+          </p>
+          <a href="#" id="download-btn" class="btn btn-cta">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M9 1v11M4 8l5 5 5-5M2 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Download Mob Timer for macOS
+          </a>
+          <p class="cta-meta">Requires macOS 13 Ventura or later · Free</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <script>
+      // Contact form interaction
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const submitBtn = contactForm.querySelector('.contact-submit');
+          const submitText = contactForm.querySelector('.contact-submit-text');
+          const successMsg = document.getElementById('contact-success');
+
+          // Disable button and show loading state
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.7';
+          submitText.textContent = 'Sending...';
+
+          // Simulate send delay
+          setTimeout(() => {
+            // Show success
+            successMsg.classList.add('visible');
+            submitText.textContent = 'Send Message';
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = false;
+
+            // Reset form
+            contactForm.reset();
+
+            // Hide success after 5s
+            setTimeout(() => {
+              successMsg.classList.remove('visible');
+            }, 5000);
+          }, 1500);
+        });
+      }
+    </script>
+    <style>
+      .contact-section {
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-section::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 600px;
+        background: radial-gradient(ellipse,
+            rgba(64, 140, 255, 0.06) 0%,
+            rgba(99, 102, 241, 0.03) 40%,
+            transparent 70%);
+        filter: blur(60px);
+        pointer-events: none;
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-info .section-tag {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .contact-info .section-title {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      .contact-desc {
+        font-size: 16px;
+        color: var(--text-2);
+        line-height: 1.7;
+        margin-bottom: 40px;
+        max-width: 420px;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-detail-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .contact-detail-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(64, 140, 255, 0.1);
+        border: 1px solid rgba(64, 140, 255, 0.2);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .contact-detail-item strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 2px;
+      }
+
+      .contact-detail-item span {
+        font-size: 13px;
+        color: var(--text-2);
+      }
+
+      /* Form card */
+      .contact-form-wrap {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 36px;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-form-wrap::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            transparent 60%);
+        pointer-events: none;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-2);
+        letter-spacing: -0.01em;
+      }
+
+      .form-input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 12px 14px;
+        font-size: 14px;
+        color: var(--text);
+        font-family: var(--font);
+        outline: none;
+        transition: all var(--transition);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .form-input::placeholder {
+        color: var(--text-3);
+      }
+
+      .form-input:hover {
+        border-color: var(--border-hover);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .form-input:focus {
+        border-color: var(--accent);
+        background: rgba(64, 140, 255, 0.04);
+        box-shadow: 0 0 0 3px rgba(64, 140, 255, 0.1);
+      }
+
+      .form-textarea {
+        resize: vertical;
+        min-height: 120px;
+        line-height: 1.6;
+      }
+
+      .contact-submit {
+        align-self: flex-start;
+        margin-top: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-submit-icon {
+        transition: transform var(--transition);
+      }
+
+      .contact-submit:hover .contact-submit-icon {
+        transform: translate(2px, -2px);
+      }
+
+      /* Success message */
+      .contact-success {
+        display: none;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px;
+        background: rgba(74, 222, 128, 0.08);
+        border: 1px solid rgba(74, 222, 128, 0.2);
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--accent-green);
+        animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      .contact-success.visible {
+        display: flex;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .contact-layout {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .contact-info .section-title {
+          text-align: center;
+        }
+
+        .contact-info .section-tag {
+          display: block;
+          text-align: center;
+        }
+
+        .contact-desc {
+          text-align: center;
+          margin: 0 auto 40px;
+        }
+
+        .contact-details {
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-form-wrap {
+          padding: 24px;
+        }
+
+        .contact-submit {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title">Let's start a<br><span class="gradient-text">conversation</span></h2>
+            <p class="contact-desc">Have a question, feedback, or just want to say hello? We'd love to hear from you.
+              Fill out the form and we'll get back to you shortly.</p>
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Email us</strong>
+                  <span>hello@mobtimer.app</span>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path>
+                    <circle cx="12" cy="9" r="2.5"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Based in</strong>
+                  <span>San Francisco, CA</span>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Response time</strong>
+                  <span>Within 24 hours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form id="contact-form" class="contact-form" onsubmit="return false;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Name</label>
+                  <input class="form-input" type="text" id="contact-name" placeholder="Your name" required="">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email</label>
+                  <input class="form-input" type="email" id="contact-email" placeholder="you@example.com" required="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input class="form-input" type="text" id="contact-subject" placeholder="What's this about?">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea class="form-input form-textarea" id="contact-message" rows="5" placeholder="Tell us more..."
+                  required=""></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg contact-submit">
+                <span class="contact-submit-text">Send Message</span>
+                <svg class="contact-submit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+              <div id="contact-success" class="contact-success">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Message sent! We'll get back to you soon.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="images/logo.png" alt="Mob Timer" width="24" height="24"
+              style="border-radius: 6px; flex-shrink: 0">
+            <span class="footer-name">Mob Timer</span>
+          </div>
+          <p class="footer-copy">
+            © 2026 Mob Timer. Built with ♥ for focused teams.
+          </p>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">GitHub</a>
+            <a href="#">Support</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Password modal -->
+    <div id="download-modal" class="dl-modal-overlay">
+      <div class="dl-modal-box">
+        <h3 class="dl-modal-title">Enter password to download</h3>
+        <input id="dl-password" class="dl-modal-input" type="password" placeholder="Password" autocomplete="off">
+        <p id="dl-error" class="dl-modal-error">Incorrect password</p>
+        <div class="dl-modal-actions">
+          <button id="dl-cancel" class="dl-btn-cancel">Cancel</button>
+          <button id="dl-confirm" class="dl-btn-confirm">Download</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+
+
+
+
+
+
+  </body>
+</html>

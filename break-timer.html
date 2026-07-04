@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <title>Mob Timer — Focus Timer for macOS</title>
+    <meta name="description"
+      content="A minimal macOS timer designed for deep focus and mob programming. Start instantly, stay focused, get notified.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet">
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <img src="/images/logo.png" alt="Mob Timer" width="28" height="28">
+          <span>Mob Timer</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#mob-programming">Mob Programming</a></li>
+          <li><a href="#break-timer">Break Timer</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#why-mob-timer">Why Mob Timer</a></li>
+        </ul>
+        <a href="#download" class="btn btn-sm btn-primary nav-download-btn">Download</a>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+      <!-- Mobile menu panel -->
+      <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu-links">
+          <li><a href="#mob-programming">Mob Programming</a></li>
+          <li><a href="#break-timer">Break Timer</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#why-mob-timer">Why Mob Timer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <a href="#download" class="btn btn-primary btn-lg mobile-menu-download">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Download for Mac
+          </a>
+          <div class="mobile-menu-meta">
+            <span>macOS 13+</span>
+            <span class="meta-dot">·</span>
+            <span>Free</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== BREAK TIMER ========== -->
+    <section class="app-showcase" id="break-timer">
+      <div class="container">
+        <div class="app-showcase-inner">
+          <div class="app-showcase-content">
+            <div class="section-tag">Break Timer</div>
+            <h2 class="section-title" style="text-align: left">Work deeply.<br>Rest intentionally.</h2>
+            <p class="app-showcase-desc">
+              Mob Timer's Break Timer keeps your work sessions structured. Pick
+              a cycle preset — Pomodoro, Deep Work, or your own custom rhythm —
+              and let the app handle the rest. A gentle ring tracks your
+              progress so you stay in the zone without watching the clock.
+            </p>
+            <ul class="app-showcase-points">
+              <li>Pomodoro, Deep Work, Quick, and Custom presets</li>
+              <li>Visual ring progress — always glanceable</li>
+              <li>Shared across your whole team in real time</li>
+            </ul>
+          </div>
+          <div class="app-showcase-visual">
+            <img src="images/app-break-timer.png" alt="Mob Timer Break Timer" class="app-showcase-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="images/logo.png" alt="Mob Timer" width="24" height="24"
+              style="border-radius: 6px; flex-shrink: 0">
+            <span class="footer-name">Mob Timer</span>
+          </div>
+          <p class="footer-copy">
+            © 2026 Mob Timer. Built with ♥ for focused teams.
+          </p>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">GitHub</a>
+            <a href="#">Support</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========== DOWNLOAD CTA ========== -->
+    <section class="download-cta" id="download">
+      <div class="cta-bg">
+        <div class="cta-glow"></div>
+      </div>
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-icon">
+            <img src="/images/logo.png" alt="Mob Timer" width="72" height="72"
+              style="filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5))">
+          </div>
+          <h2 class="cta-title">Start focusing today.</h2>
+          <p class="cta-subtitle">
+            Free. Native. No sign-up required. Just download and run.
+          </p>
+          <a href="#" id="download-btn" class="btn btn-cta">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M9 1v11M4 8l5 5 5-5M2 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Download Mob Timer for macOS
+          </a>
+          <p class="cta-meta">Requires macOS 13 Ventura or later · Free</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Password modal -->
+    <div id="download-modal" class="dl-modal-overlay">
+      <div class="dl-modal-box">
+        <h3 class="dl-modal-title">Enter password to download</h3>
+        <input id="dl-password" class="dl-modal-input" type="password" placeholder="Password" autocomplete="off">
+        <p id="dl-error" class="dl-modal-error">Incorrect password</p>
+        <div class="dl-modal-actions">
+          <button id="dl-cancel" class="dl-btn-cancel">Cancel</button>
+          <button id="dl-confirm" class="dl-btn-confirm">Download</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+  </body>
+</html>
