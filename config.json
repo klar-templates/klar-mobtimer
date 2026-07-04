@@ -1,0 +1,10 @@
+{
+  "pageTypes": [],
+  "pages": [
+    {
+      "name": "index.html",
+      "editableElements": "body,\nli:attr(style),"
+    }
+  ],
+  "vocabularies": {}
+}
